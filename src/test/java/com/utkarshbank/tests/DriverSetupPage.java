@@ -20,6 +20,7 @@ public class DriverSetupPage {
 
 		logger.info("Starting of setupChromeDriver method");
 
+		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 				logger.info("S*************************************** in chrome options ***********************************************d");
