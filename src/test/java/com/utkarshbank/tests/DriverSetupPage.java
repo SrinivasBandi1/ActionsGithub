@@ -30,7 +30,7 @@ options.addArguments("--disable-dev-shm-usage"); // Prevent shared memory issues
 options.addArguments("--disable-gpu"); // For headless mode
 options.addArguments("--remote-allow-origins=*"); // Avoid origin-related issues
 options.addArguments("--window-size=1920,1080"); 
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 
 		logger.info("Ending of setupChromeDriver method");
 		return driver;
