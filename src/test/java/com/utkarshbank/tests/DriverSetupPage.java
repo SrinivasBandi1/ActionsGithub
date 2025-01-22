@@ -22,6 +22,7 @@ public class DriverSetupPage {
 
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
+		System.out.println("*************************************** in chrome options ***********************************************")
 options.addArguments("--headless"); // Required for CI
 options.addArguments("--no-sandbox"); // Bypass the sandbox
 options.addArguments("--disable-dev-shm-usage"); // Prevent shared memory issues
