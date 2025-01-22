@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.apache.log4j.Logger;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,6 +21,13 @@ public class DriverSetupPage {
 		logger.info("Starting of setupChromeDriver method");
 
 		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless"); // Required for CI
+options.addArguments("--no-sandbox"); // Bypass the sandbox
+options.addArguments("--disable-dev-shm-usage"); // Prevent shared memory issues
+options.addArguments("--disable-gpu"); // For headless mode
+options.addArguments("--remote-allow-origins=*"); // Avoid origin-related issues
+options.addArguments("--window-size=1920,1080"); 
 		driver = new ChromeDriver();
 
 		logger.info("Ending of setupChromeDriver method");
